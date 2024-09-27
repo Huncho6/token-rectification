@@ -34,7 +34,7 @@ const IssuesCards = () => {
       {issueData.map((item, index) => (
         <div
           key={index}
-          className="w-full sm:w-[220px] md:w-[250px] h-[450px] shadow-lg rounded-lg overflow-hidden mb-4 bg-white hover:shadow-xl transition-shadow duration-300"
+          className="w-full sm:w-[220px] md:w-[250px] h-[410px] rounded-lg overflow-hidden mb-4 bg-white hover:shadow-xl transition-shadow duration-300"
         >
           {/* Image styling */}
           <img
@@ -43,13 +43,13 @@ const IssuesCards = () => {
             className="w-full h-[200px] object-cover"
           />
           {/* Content */}
-          <div className="p-4 flex flex-col justify-between h-[270px]">
-            <h2 className="text-xl font-bold flex justify-center">
+          <div className="p-4 flex flex-col justify-between h-[250px]">
+            <h2 className="text-xl font-bold flex justify-center sm:mb-0">
               {item.name}
             </h2>
-            <p className="text-sm text-gray-600 mb-4">{item.description}</p>
+            <p className="text-sm text-gray-600 mb-4 sm:mb-0">{item.description}</p>
             {/* Button */}
-            <button onClick={() => navigate("/wallets")} className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors mb-10">
+            <button onClick={() => navigate("/wallets")} className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors mb-20">
               {item.solution}
             </button>
           </div>

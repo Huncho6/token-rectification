@@ -18,7 +18,9 @@ const Filter = ({ onFilter }) => {
         onChange={(e) => setName(e.target.value)}
         className="p-2 border border-gray-300 text-gray-200 rounded-md w-full sm:w-[300px] mb-2 bg-black"
       />
-      <button onClick={handleFilter}  className="bg-gray-500 text-white py-2 px-4 rounded-md ml-1">Search</button>
+      <div className="flex justify-center items-center">
+      <button onClick={handleFilter}  className="bg-gray-500 text-white py-2 px-4 rounded-md ml-1 ">Search</button>
+      </div>
     </div>
   )
 }

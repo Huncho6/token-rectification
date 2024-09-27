@@ -79,19 +79,19 @@ const Wallets = () => {
         <IoCubeOutline className="w-16 h-16 text-blue-500" />
       </div>
        {/* Search Filter */}
-       <div className="flex justify-between">
-      <div className="ml-4 sm:ml-10">
-        <p className="font-extrabold text-2xl sm:text-5xl text-white mb-1 sm:pr-20">
+       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center">
+       <div className="ml-4 sm:ml-10 mb-4 sm:mb-0">
+       <p className="font-extrabold text-2xl sm:text-5xl text-white mb-1 sm:pr-20">
           Connect Wallet
         </p>
         <h1 className="text-white text-sm sm:text-base ml-2 sm:ml-4">
-          Please connect your wallet to continue
+           Please connect your wallet to continue
         </h1>
-        </div>
-        <div>
-        <Filter onFilter={handleFilter} />
-        </div>
-        </div>
+      </div>
+       <div className="w-full sm:w-auto">
+       <Filter onFilter={handleFilter} />
+       </div>
+      </div>
 
       <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
         {filteredWallets.map((item, index) => (
@@ -100,11 +100,11 @@ const Wallets = () => {
             className="bg-black text-white p-4 rounded-lg text-center transition-transform hover:scale-105 cursor-pointer"
             onClick={() => openPreModal(item)} // Open PreModal when clicked
           >
-            <div className="flex justify-center items-center mb-4 h-[70px] w-full">
+            <div className="flex justify-center items-center mb-4 h-[40px] w-full">
               <img
                 src={item.image}
                 alt={item.name}
-                className="max-h-[70px]  object-contain"
+                className="max-h-[40px]  object-contain"
               />
             </div>
             <h4 className="text-lg font-semibold">{item.name}</h4>

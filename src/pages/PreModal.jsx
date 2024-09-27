@@ -1,7 +1,7 @@
 const PreModal = ({ wallet, closeModal, proceedToModal }) => {
     return (
       <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-        <div className="bg-white rounded-lg w-[90%] sm:w-[400px] md:w-[500px] p-6">
+        <div className="bg-black rounded-lg w-[90%] sm:w-[400px] md:w-[500px] p-6">
           {/* Wallet Name and Image */}
           <div className="flex items-center mb-4">
             <img src={wallet.image} alt={wallet.name} className="rounded-full h-[40px] sm:h-[50px]" />
@@ -27,7 +27,7 @@ const PreModal = ({ wallet, closeModal, proceedToModal }) => {
               PROCEED
             </button>
             <button
-              className="bg-red-500 text-white px-4 py-2 rounded-md w-full sm:w-auto sm:px-6"
+              className="bg-red-500 text-white px-4 py-2 rounded-md w-[150px] sm:w-auto sm:px-6"
               onClick={closeModal}
             >
               Cancel
