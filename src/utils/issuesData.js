@@ -18,7 +18,13 @@ export const data = [
       solution: "Migrate"
     },
     {
-      image: "https://res.cloudinary.com/dh60kpxg5/image/upload/v1727040853/migration_1_qm9mro.jpg",
+      image: "https://res.cloudinary.com/dh60kpxg5/image/upload/v1727560913/mig_cdqnkl.jpg",
+      name: "Convert your Zinu V2 to Zinu MainnetZ",
+      description: "Move your Zinu from the Ethereum network and Bnb smart chain network to MainnetZ network",
+      solution: "Migrate"
+    },
+    {
+      image: "https://res.cloudinary.com/dh60kpxg5/image/upload/v1727561176/ret_tzms9u.jpg",
       name: "Retrieve your Tokens from the contract",
       description: "Retrieve Tokens you mistakenly sent to the contract",
       solution: "Retrieve"
@@ -66,7 +72,7 @@ export const data = [
       solution: "CLAIM"
     },
     {
-      image: "https://res.cloudinary.com/dh60kpxg5/image/upload/v1727041310/Recovery_1_fjmmb8.png",
+      image: "https://res.cloudinary.com/dh60kpxg5/image/upload/v1727561243/images_1_xfafsy.jpg",
       name: "Recovery",
       description: "Want to recover lost token?",
       solution: "RECOVER"
@@ -120,7 +126,7 @@ export const data = [
       solution: "CONNECT WALLET"
     },
     {
-      image: "https://res.cloudinary.com/dh60kpxg5/image/upload/v1727042758/traniks_tz2ndl.png",
+      image: "https://res.cloudinary.com/dh60kpxg5/image/upload/v1727561243/loic_w6frbr.jpg",
       name: "LOCKED ACCOUNT",
       description: "If you are logged out due to activity on the account",
       solution: "FIX"

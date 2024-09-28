@@ -49,7 +49,7 @@ const IssuesCards = () => {
             </h2>
             <p className="text-sm text-gray-600 mb-4 sm:mb-0">{item.description}</p>
             {/* Button */}
-            <button onClick={() => navigate("/wallets")} className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors mb-20">
+            <button onClick={() => navigate("/wallets")} className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors mt-1 mb-20">
               {item.solution}
             </button>
           </div>
