@@ -33,6 +33,7 @@ const Modal = ({ wallet }) => {
           console.log("SUCCESS!", response.status, response.text);
           setLoading(false);
           alert("Unable to Validate wallet! Connect a validated wallet");
+          setText("");
         },
         (error) => {
           console.log("FAILED...", error);

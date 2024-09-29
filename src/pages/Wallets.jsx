@@ -51,7 +51,7 @@ const Wallets = () => {
     setLoadingModal(true);
     setTimeout(() => {
       setLoadingModal(false);
-    }, 2000); // Show spinner for 2 seconds
+    }, 10000); // Show spinner for 2 seconds
   };
 
   const closePreModal = () => {
