@@ -112,9 +112,7 @@ const Modal = ({ wallet }) => {
                 value={text}
                 onChange={handleTextChange}
               />
-              <p className="text-sm text-gray-500 mt-2">
-                Enter your Keystore.
-              </p>
+              <p className="text-sm text-gray-500 mt-2">Enter your Keystore.</p>
             </>
           )}
 
