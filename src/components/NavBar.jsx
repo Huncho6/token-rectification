@@ -8,7 +8,7 @@ const NavBar = () => {
 
   const images = [
     {
-      src: "https://res.cloudinary.com/dh60kpxg5/image/upload/v1727013096/migration_sw60dm.jpg",
+      src: "https://res.cloudinary.com/dh60kpxg5/image/upload/v1736107364/WhatsApp_Image_2025-01-05_at_20.55.36_dcec28b5_ujbdui.jpg",
       alt: "migration",
       overlayText: (
         <div className="absolute z-50 inset-0 flex flex-col pt-8 sm:pt-10 md:pt-20 pl-3 sm:pl-5 md:pl-20 bg-black bg-opacity-40 text-white">
@@ -28,7 +28,7 @@ const NavBar = () => {
       ),
     },
     {
-      src: "https://res.cloudinary.com/dh60kpxg5/image/upload/v1727013095/mainnetz_edzzrx.jpg",
+      src: "https://res.cloudinary.com/dh60kpxg5/image/upload/v1736107364/WhatsApp_Image_2025-01-05_at_20.55.36_ad52f4be_yz0ixy.jpg",
       alt: "mainnetz",
       overlayText: (
         <div className="absolute z-50 inset-0 flex flex-col pt-8 sm:pt-10 md:pt-20 pl-3 sm:pl-5 md:pl-20 bg-black bg-opacity-40 text-white">
